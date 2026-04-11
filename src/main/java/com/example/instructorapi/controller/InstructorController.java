@@ -13,6 +13,8 @@ import com.example.instructorapi.dto.CreateInstructorRequest;
 import com.example.instructorapi.model.InstructorModel;
 import com.example.instructorapi.service.InstructorService;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/api/instructors")
 public class InstructorController {
@@ -34,7 +36,7 @@ public class InstructorController {
     }
 
     @PostMapping
-    public InstructorModel createInstructor(@RequestBody CreateInstructorRequest request) {
+    public InstructorModel createInstructor(@Valid @RequestBody CreateInstructorRequest request) {
         // code to create an instructor
         InstructorModel instructor = new InstructorModel(request.getName(), request.getEmail(), request.getSpecialization(), request.getYearsExperience());
         return instructorService.createInstructor(instructor);
