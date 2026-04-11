@@ -1,4 +1,4 @@
-package com.example.instructorapi.controiller;
+package com.example.instructorapi.controller;
 
 import java.util.Map;
 
