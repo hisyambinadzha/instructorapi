@@ -3,14 +3,17 @@ package com.example.instructorapi.controller;
 import java.util.List;
 import java.util.Map;
 
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.example.instructorapi.dto.CreateInstructorRequest;
-import com.example.instructorapi.model.InstructorModel;
+import com.example.instructorapi.model.Instructor;
 import com.example.instructorapi.service.InstructorService;
 
 import jakarta.validation.Valid;
@@ -27,7 +30,7 @@ public class InstructorController {
     @GetMapping
     public Map<String,Object> instructors() {
         // code to get all instructors
-        List<InstructorModel> instructors = instructorService.getInstructors();
+        List<Instructor> instructors = instructorService.getInstructors();
 
         Map<String, Object> response = Map.of(
             "instructors", instructors
@@ -35,11 +38,28 @@ public class InstructorController {
         return response;
     }
 
+    @GetMapping("/{id}")
+    public Instructor getInstructorById(@PathVariable String id) {
+        return instructorService.getInstructorById(id);
+    }
+
     @PostMapping
-    public InstructorModel createInstructor(@Valid @RequestBody CreateInstructorRequest request) {
+    public Instructor createInstructor(@Valid @RequestBody CreateInstructorRequest request) {
         // code to create an instructor
-        InstructorModel instructor = new InstructorModel(request.getName(), request.getEmail(), request.getSpecialization(), request.getYearsExperience());
+        Instructor instructor = new Instructor(request.getName(), request.getEmail(), request.getSpecialization(), request.getYearsExperience());
         return instructorService.createInstructor(instructor);
+    }
+
+    @PutMapping("/{id}")
+    public Instructor updateInstructor(@PathVariable String id, @Valid @RequestBody Instructor instructor) {
+        // code to update an instructor
+        return instructorService.updateInstructor(instructor, id);
+    }
+
+    @DeleteMapping("/{id}")
+    public void deleteInstructor(@PathVariable String id) {
+        // code to delete an instructor
+        instructorService.deleteInstructor(id);
     }
 
 }   

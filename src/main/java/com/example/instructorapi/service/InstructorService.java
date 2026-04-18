@@ -1,24 +1,36 @@
 package com.example.instructorapi.service;
 
-import java.util.ArrayList;
 import java.util.List;
 
 import org.springframework.stereotype.Service;
 
-import com.example.instructorapi.model.InstructorModel;
+import com.example.instructorapi.model.Instructor;
+import com.example.instructorapi.repository.InstructorRepository;
 
 @Service
 public class InstructorService {
-    private final List<InstructorModel> instructors = new ArrayList<>();    
+    private final InstructorRepository instructorRepository; 
 
-    public List<InstructorModel> getInstructors() {
-        instructors.add(new InstructorModel("John Doe", "johndoe@example.com", "Java", 5));
-        instructors.add(new InstructorModel("Jane Doe", "janedoe@example.com", "Spring Boot", 7));
-        return instructors;
+    public InstructorService(InstructorRepository instructorRepository) {
+        this.instructorRepository = instructorRepository;
+    }
+    public List<Instructor> getInstructors() {
+        return instructorRepository.findAll();
     }
 
-    public InstructorModel createInstructor(InstructorModel instructor) {
-        instructors.add(instructor);
-        return instructor;
+    public Instructor getInstructorById(String id) {
+        return instructorRepository.getInstructorById(id);
+    }
+
+    public Instructor createInstructor(Instructor instructor) {
+        return instructorRepository.createInstructor(instructor);
+    }
+
+    public Instructor updateInstructor(Instructor instructor, String id) {
+        return instructorRepository.updateInstructor(instructor, id);
+    }
+
+    public void deleteInstructor(String id) {
+        instructorRepository.deleteInstructor(id);
     }
 }
