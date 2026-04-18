@@ -1,6 +1,13 @@
 package com.example.instructorapi.model;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+@Document(collection = "instructors")
 public class InstructorModel {
+
+    @Id
+    private String id;
     private String name;
     private String email;
     private String specialization;
