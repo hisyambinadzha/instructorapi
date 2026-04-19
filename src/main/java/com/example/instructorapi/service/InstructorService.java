@@ -37,4 +37,8 @@ public class InstructorService {
     public List<Instructor> searchInstructorsByKeyword(String keyword) {
         return instructorRepository.findByNameContainingIgnoreCase(keyword);
     }
+
+    public List<Instructor> searchInstructorsBySpecialization(String specialization) {
+        return instructorRepository.findBySpecialization(specialization);
+    }
 }

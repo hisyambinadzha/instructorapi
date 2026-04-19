@@ -29,14 +29,8 @@ public class InstructorController {
     }
     
     @GetMapping
-    public Map<String,Object> instructors() {
-        // code to get all instructors
-        List<Instructor> instructors = instructorService.getInstructors();
-
-        Map<String, Object> response = Map.of(
-            "instructors", instructors
-        );
-        return response;
+    public List<Instructor> searchInstructorsBySpecialization(@RequestParam("specialization") String specialization) {
+        return instructorService.searchInstructorsBySpecialization(specialization);
     }
 
     @GetMapping("/{id}")

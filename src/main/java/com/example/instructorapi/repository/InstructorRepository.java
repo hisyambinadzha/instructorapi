@@ -23,4 +23,6 @@ public interface InstructorRepository extends MongoRepository<Instructor, String
     void deleteById(String id);
 
     List<Instructor> findByNameContainingIgnoreCase(String name);
+
+    List<Instructor> findBySpecialization(String specialization);
 }
