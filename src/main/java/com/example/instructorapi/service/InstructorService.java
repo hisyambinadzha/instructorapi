@@ -2,6 +2,8 @@ package com.example.instructorapi.service;
 
 import java.util.List;
 
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import com.example.instructorapi.model.Instructor;
@@ -40,5 +42,9 @@ public class InstructorService {
 
     public List<Instructor> searchInstructorsBySpecialization(String specialization) {
         return instructorRepository.findBySpecialization(specialization);
+    }
+
+    public Page<Instructor> getAllInstructors(Pageable pageable) {
+        return instructorRepository.findAll(pageable);
     }
 }
