@@ -23,6 +23,14 @@ public class Instructor {
         this.yearsExperience = yearsExperience;
     }
 
+    public String getId() {
+        return id;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
     public String getName() {
         return name;
     }
@@ -49,5 +57,9 @@ public class Instructor {
 
     public int getYearsExperience() {
         return yearsExperience;
+    }
+
+    public void setYearsExperience(int yearsExperience) {
+        this.yearsExperience = yearsExperience;
     }
 }
