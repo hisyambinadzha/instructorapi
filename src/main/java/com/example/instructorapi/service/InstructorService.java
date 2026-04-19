@@ -47,4 +47,8 @@ public class InstructorService {
     public Page<Instructor> getAllInstructors(Pageable pageable) {
         return instructorRepository.findAll(pageable);
     }
+
+    public Page<Instructor> getInstructorsBySpecialization(String specialization, Pageable pageable) {
+        return instructorRepository.findBySpecialization(specialization, pageable);
+    }
 }

@@ -67,4 +67,9 @@ public class InstructorController {
     public Page<Instructor> getAllInstructors(Pageable pageable) {
         return instructorService.getAllInstructors(pageable);
     }
+    
+    @GetMapping("/paged/specialization/{specialization}")
+    public Page<Instructor> getInstructorsByNameContainingIgnoreCase(@PathVariable String specialization, Pageable pageable) {
+        return instructorService.getInstructorsBySpecialization(specialization, pageable);
+    }
 }   
