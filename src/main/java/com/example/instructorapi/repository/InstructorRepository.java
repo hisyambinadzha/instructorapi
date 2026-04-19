@@ -3,18 +3,22 @@ package com.example.instructorapi.repository;
 import java.util.List;
 
 import org.springframework.data.mongodb.repository.MongoRepository;
+import org.springframework.data.mongodb.repository.Query;
+import org.springframework.stereotype.Repository;
 
 import com.example.instructorapi.model.Instructor;
 
+@Repository
 public interface InstructorRepository extends MongoRepository<Instructor, String> {
     
-    public List<Instructor> findAll();
+    List<Instructor> findAll();
 
-    public Instructor getInstructorById(String id);
+    @Query("{ 'id' : ?0 }")
+    Instructor getInstructorById(String id);
 
-    public Instructor createInstructor(Instructor instructor);
+    @Query("{ 'instructor' : ?0, 'id' : ?1 }")
+    Instructor updateById(Instructor instructor, String id);
 
-    public Instructor updateInstructor(Instructor instructor, String id);
-
-    public void deleteInstructor(String id);
+    @Query("{ 'id' : ?0 }")
+    void deleteById(String id);
 }

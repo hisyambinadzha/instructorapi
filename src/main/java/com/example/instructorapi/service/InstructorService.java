@@ -23,14 +23,14 @@ public class InstructorService {
     }
 
     public Instructor createInstructor(Instructor instructor) {
-        return instructorRepository.createInstructor(instructor);
+        return instructorRepository.save(instructor);
     }
 
     public Instructor updateInstructor(Instructor instructor, String id) {
-        return instructorRepository.updateInstructor(instructor, id);
+        return instructorRepository.updateById(instructor, id);
     }
 
     public void deleteInstructor(String id) {
-        instructorRepository.deleteInstructor(id);
+        instructorRepository.deleteById(id);
     }
 }
