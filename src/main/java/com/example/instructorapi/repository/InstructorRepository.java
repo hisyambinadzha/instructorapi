@@ -31,4 +31,6 @@ public interface InstructorRepository extends MongoRepository<Instructor, String
     Page<Instructor> findAll(Pageable pageable);
 
     Page<Instructor> findBySpecialization(String specialization, Pageable pageable);
+
+    Page<Instructor> findBySpecializationAndNameContainingIgnoreCase(String specialization, String name, Pageable pageable);
 }

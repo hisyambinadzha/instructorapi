@@ -51,4 +51,8 @@ public class InstructorService {
     public Page<Instructor> getInstructorsBySpecialization(String specialization, Pageable pageable) {
         return instructorRepository.findBySpecialization(specialization, pageable);
     }
+
+    public Page<Instructor> getInstructorsBySpecializationAndNameContainingIgnoreCase(String specialization, String name, Pageable pageable) {
+        return instructorRepository.findBySpecializationAndNameContainingIgnoreCase(specialization, name, pageable);
+    }
 }

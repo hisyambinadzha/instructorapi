@@ -69,7 +69,12 @@ public class InstructorController {
     }
     
     @GetMapping("/paged/specialization/{specialization}")
-    public Page<Instructor> getInstructorsByNameContainingIgnoreCase(@PathVariable String specialization, Pageable pageable) {
+    public Page<Instructor> getInstructorsBySpecialization(@PathVariable String specialization, Pageable pageable) {
         return instructorService.getInstructorsBySpecialization(specialization, pageable);
+    }
+
+    @GetMapping("/paged/specialization/{specialization}/search")
+    public Page<Instructor> getInstructorsBySpecializationAndNameContainingIgnoreCase(@PathVariable String specialization, @RequestParam("keyword") String keyword, Pageable pageable) {
+        return instructorService.getInstructorsBySpecializationAndNameContainingIgnoreCase(specialization, keyword, pageable);
     }
 }   
