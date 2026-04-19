@@ -33,4 +33,8 @@ public class InstructorService {
     public void deleteInstructor(String id) {
         instructorRepository.deleteById(id);
     }
+
+    public List<Instructor> searchInstructorsByKeyword(String keyword) {
+        return instructorRepository.findByNameContainingIgnoreCase(keyword);
+    }
 }
