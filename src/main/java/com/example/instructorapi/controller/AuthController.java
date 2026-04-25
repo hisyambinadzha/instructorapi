@@ -27,7 +27,7 @@ public class AuthController {
 
     @PostMapping("/register")
     @ResponseStatus(HttpStatus.CREATED)
-    public Map<String, String> register(@Valid RegisterRequest request) {
+    public Map<String, String> register(@Valid @RequestBody RegisterRequest request) {
         authService.register(request);
         return Map.of("message", "User registered successfully");
     }

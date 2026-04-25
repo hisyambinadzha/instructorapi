@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
 
-@Document(collation = "users")
+@Document(collection = "users")
 public class User {
     @Id
     @JsonProperty(access = JsonProperty.Access.READ_ONLY)

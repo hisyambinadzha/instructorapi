@@ -35,10 +35,11 @@ public class AuthService {
         userRepository.save(user);
     }
 
-        public AuthResponse login(LoginRequest request) {
-        User user = userRepository.findByEmail(request.getEmail()).orElseThrow(() -> new ResponseStatusException( HttpStatus.NOT_FOUND, "Email not found"));
+    public AuthResponse login(LoginRequest request) {
+        User user = userRepository.findByEmail(request.getEmail())
+                .orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Email not found"));
         if (!passwordEncoder.matches(request.getPassword(), user.getPassword())) {
-            throw new ResponseStatusException(HttpStatus .UNAUTHORIZED, "Invalid password");
+            throw new ResponseStatusException(HttpStatus.UNAUTHORIZED, "Invalid password");
         }
         String token = jwtService.generateToken(user);
         return new AuthResponse(token, "Bearer", user.getEmail(), user.getRole().name());
