@@ -40,10 +40,10 @@ public class AppConfig {
                 .userDetailsService(customUserDetailsService)
                 .authorizeHttpRequests(auth -> auth
                         .requestMatchers("/api/health", "/api/auth/**", "/error").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/courses/**").permitAll()
-                        .requestMatchers(HttpMethod.POST, "/api/courses/**").authenticated()
-                        .requestMatchers(HttpMethod.PUT, "/api/courses/**").authenticated()
-                        .requestMatchers(HttpMethod.DELETE, "/api/courses/**").hasRole("ADMIN")
+                        .requestMatchers(HttpMethod.GET, "/api/v1/instructors/**").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/v1/instructors/**").authenticated()
+                        .requestMatchers(HttpMethod.PUT, "/api/v1/instructors/**").authenticated()
+                        .requestMatchers(HttpMethod.DELETE, "/api/v1/instructors/**").hasRole("ADMIN")
                         .anyRequest().authenticated())
                 .addFilterBefore(jwtAuthenticationFilter, UsernamePasswordAuthenticationFilter.class);
 

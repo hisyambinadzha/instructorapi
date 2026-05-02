@@ -21,7 +21,7 @@ import com.example.instructorapi.service.InstructorService;
 import jakarta.validation.Valid;
 
 @RestController
-@RequestMapping("/api/instructors")
+@RequestMapping("/api/v1/instructors")
 public class InstructorController {
     private final InstructorService instructorService;
 
@@ -30,8 +30,8 @@ public class InstructorController {
     }
     
     @GetMapping
-    public List<Instructor> searchInstructorsBySpecialization(@RequestParam("specialization") String specialization) {
-        return instructorService.searchInstructorsBySpecialization(specialization);
+    public List<Instructor> getInstructors() {
+        return instructorService.getInstructors();
     }
 
     @GetMapping("/{id}")
@@ -56,6 +56,11 @@ public class InstructorController {
     public void deleteInstructor(@PathVariable String id) {
         // code to delete an instructor
         instructorService.deleteInstructor(id);
+    }
+
+    @GetMapping("/specialization")
+    public List<Instructor> searchInstructorsBySpecialization(@RequestParam("specialization") String specialization) {
+        return instructorService.searchInstructorsBySpecialization(specialization);
     }
 
     @GetMapping("/search")
