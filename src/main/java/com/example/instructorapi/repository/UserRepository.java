@@ -1,4 +1,4 @@
-package com.example.instructorapi.service;
+package com.example.instructorapi.repository;
 
 import java.util.Optional;
 

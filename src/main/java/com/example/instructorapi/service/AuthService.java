@@ -10,6 +10,7 @@ import com.example.instructorapi.dto.LoginRequest;
 import com.example.instructorapi.dto.RegisterRequest;
 import com.example.instructorapi.model.Role;
 import com.example.instructorapi.model.User;
+import com.example.instructorapi.repository.UserRepository;
 
 @Service
 public class AuthService {
