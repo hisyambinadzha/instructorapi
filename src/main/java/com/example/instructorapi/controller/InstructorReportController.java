@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.instructorapi.dto.InstructorSpecializationSummary;
 import com.example.instructorapi.dto.InstructorStatusSummary;
 import com.example.instructorapi.service.InstructorReportService;
 
@@ -21,5 +22,10 @@ public class InstructorReportController {
     @GetMapping("/by-status")
     public List<InstructorStatusSummary> getInstructorStatusSummary() {
         return instructorReportService.getInstructorStatusSummary();
+    }
+
+    @GetMapping("/by-specialization")
+    public List<InstructorSpecializationSummary> getInstructorSpecializationSummary() {
+        return instructorReportService.getInstructorSpecializationSummary();
     }
 }
