@@ -35,15 +35,7 @@ public class InstructorService {
     public Instructor getInstructorById(String id) {
         logger.info("Getting instructor with id '{}'", id);
 
-        if (instructorRepository.existsById(id)) {
-            throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Instructor with id '" + id + "' does not exist");
-        }
-
-        Instructor instructor = instructorRepository.getInstructorById(id);
-
-        logger.info("Found instructor with id '{}'", id);
-
-        return instructor;
+        return instructorRepository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND, "Instructor with id '" + id + "' does not exist"));
     }
 
     public Instructor createInstructor(Instructor instructor) {
@@ -59,11 +51,16 @@ public class InstructorService {
     public Instructor updateInstructor(Instructor instructor, String id) {
         logger.info("Updating instructor with id '{}'", id);
 
-        if (instructorRepository.existsById(id)) {
+        if (!instructorRepository.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Instructor with id '" + id + "' does not exist");
         }
 
-        Instructor updatedInstructor = instructorRepository.updateById(instructor, id);
+        Instructor updatedInstructor = getInstructorById(id);
+        updatedInstructor.setName(instructor.getName());
+        updatedInstructor.setEmail(instructor.getEmail());
+        updatedInstructor.setSpecialization(instructor.getSpecialization());
+        updatedInstructor.setYearsExperience(instructor.getYearsExperience());
+        instructorRepository.save(updatedInstructor);
 
         logger.info("Updated instructor with id '{}'", id);
 
@@ -73,7 +70,7 @@ public class InstructorService {
     public void deleteInstructor(String id) {
         logger.info("Deleting instructor with id '{}'", id);
 
-        if (instructorRepository.existsById(id)) {
+        if (!instructorRepository.existsById(id)) {
             throw new ResponseStatusException(HttpStatus.NOT_FOUND, "Instructor with id '" + id + "' does not exist");
         }
 

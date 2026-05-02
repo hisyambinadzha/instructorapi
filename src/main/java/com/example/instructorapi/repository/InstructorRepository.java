@@ -1,6 +1,7 @@
 package com.example.instructorapi.repository;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -12,17 +13,6 @@ import com.example.instructorapi.model.Instructor;
 
 @Repository
 public interface InstructorRepository extends MongoRepository<Instructor, String> {
-    
-    List<Instructor> findAll();
-
-    @Query("{ 'id' : ?0 }")
-    Instructor getInstructorById(String id);
-
-    @Query("{ 'instructor' : ?0, 'id' : ?1 }")
-    Instructor updateById(Instructor instructor, String id);
-
-    @Query("{ 'id' : ?0 }")
-    void deleteById(String id);
 
     List<Instructor> findByNameContainingIgnoreCase(String name);
 
