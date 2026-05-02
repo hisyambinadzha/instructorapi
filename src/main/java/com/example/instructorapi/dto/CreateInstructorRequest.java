@@ -10,6 +10,8 @@ public class CreateInstructorRequest {
     private String email;
     @NotBlank(message = "Specialization is required")
     private String specialization;
+    @NotBlank(message = "Status is required")
+    private String status;
     @Min(value = 0, message = "Years of experience must be 0 or more")
     private int yearsExperience;
 
@@ -38,6 +40,14 @@ public class CreateInstructorRequest {
 
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getYearsExperience() {

@@ -42,7 +42,7 @@ public class InstructorController {
     @PostMapping
     public Instructor createInstructor(@Valid @RequestBody CreateInstructorRequest request) {
         // code to create an instructor
-        Instructor instructor = new Instructor(request.getName(), request.getEmail(), request.getSpecialization(), request.getYearsExperience());
+        Instructor instructor = new Instructor(request.getName(), request.getEmail(), request.getSpecialization(), request.getStatus(), request.getYearsExperience());
         return instructorService.createInstructor(instructor);
     }
 

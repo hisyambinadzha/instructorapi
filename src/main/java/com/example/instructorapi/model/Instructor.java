@@ -11,15 +11,17 @@ public class Instructor {
     private String name;
     private String email;
     private String specialization;
+    private String status;
     private int yearsExperience;
 
     public Instructor() {
     }
 
-    public Instructor(String name, String email, String specialization, int yearsExperience) {
+    public Instructor(String name, String email, String specialization, String status, int yearsExperience) {
         this.name = name;
         this.email = email;
         this.specialization = specialization;
+        this.status = status;
         this.yearsExperience = yearsExperience;
     }
 
@@ -53,6 +55,14 @@ public class Instructor {
 
     public void setSpecialization(String specialization) {
         this.specialization = specialization;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
     }
 
     public int getYearsExperience() {
