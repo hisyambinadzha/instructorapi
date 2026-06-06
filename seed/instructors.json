@@ -1,0 +1,149 @@
+[
+  {
+    "name": "Abu Garcia",
+    "email": "abu.garcia@garcia",
+    "specialization": "Java",
+    "status": "ACTIVE",
+    "yearsExperience": 5
+  },
+  {
+    "name": "Sophia Tan",
+    "email": "sophia.tan@academy",
+    "specialization": "Python",
+    "status": "ACTIVE",
+    "yearsExperience": 7
+  },
+  {
+    "name": "Daniel Wong",
+    "email": "daniel.wong@academy",
+    "specialization": "C++",
+    "status": "INACTIVE",
+    "yearsExperience": 10
+  },
+  {
+    "name": "Maria Lopez",
+    "email": "maria.lopez@academy",
+    "specialization": "JavaScript",
+    "status": "ACTIVE",
+    "yearsExperience": 4
+  },
+  {
+    "name": "James Smith",
+    "email": "james.smith@academy",
+    "specialization": "Ruby",
+    "status": "ACTIVE",
+    "yearsExperience": 8
+  },
+  {
+    "name": "Aisha Rahman",
+    "email": "aisha.rahman@academy",
+    "specialization": "PHP",
+    "status": "ACTIVE",
+    "yearsExperience": 6
+  },
+  {
+    "name": "Michael Johnson",
+    "email": "michael.johnson@academy",
+    "specialization": "Go",
+    "status": "INACTIVE",
+    "yearsExperience": 12
+  },
+  {
+    "name": "Emily Chen",
+    "email": "emily.chen@academy",
+    "specialization": "Swift",
+    "status": "ACTIVE",
+    "yearsExperience": 3
+  },
+  {
+    "name": "Robert Brown",
+    "email": "robert.brown@academy",
+    "specialization": "Kotlin",
+    "status": "ACTIVE",
+    "yearsExperience": 9
+  },
+  {
+    "name": "Hannah Lee",
+    "email": "hannah.lee@academy",
+    "specialization": "TypeScript",
+    "status": "ACTIVE",
+    "yearsExperience": 5
+  },
+  {
+    "name": "David Kim",
+    "email": "david.kim@academy",
+    "specialization": "Scala",
+    "status": "INACTIVE",
+    "yearsExperience": 11
+  },
+  {
+    "name": "Olivia Martinez",
+    "email": "olivia.martinez@academy",
+    "specialization": "Rust",
+    "status": "ACTIVE",
+    "yearsExperience": 6
+  },
+  {
+    "name": "William Davis",
+    "email": "william.davis@academy",
+    "specialization": "Perl",
+    "status": "ACTIVE",
+    "yearsExperience": 13
+  },
+  {
+    "name": "Chloe Zhang",
+    "email": "chloe.zhang@academy",
+    "specialization": "HTML/CSS",
+    "status": "ACTIVE",
+    "yearsExperience": 4
+  },
+  {
+    "name": "Ethan Wilson",
+    "email": "ethan.wilson@academy",
+    "specialization": "SQL",
+    "status": "ACTIVE",
+    "yearsExperience": 7
+  },
+  {
+    "name": "Grace Patel",
+    "email": "grace.patel@academy",
+    "specialization": "Data Science",
+    "status": "INACTIVE",
+    "yearsExperience": 9
+  },
+  {
+    "name": "Lucas Nguyen",
+    "email": "lucas.nguyen@academy",
+    "specialization": "Machine Learning",
+    "status": "ACTIVE",
+    "yearsExperience": 6
+  },
+  {
+    "name": "Isabella Rossi",
+    "email": "isabella.rossi@academy",
+    "specialization": "Cybersecurity",
+    "status": "ACTIVE",
+    "yearsExperience": 8
+  },
+  {
+    "name": "Noah Anderson",
+    "email": "noah.anderson@academy",
+    "specialization": "Cloud Computing",
+    "status": "ACTIVE",
+    "yearsExperience": 10
+  },
+  {
+    "name": "Maya Singh",
+    "email": "maya.singh@academy",
+    "specialization": "DevOps",
+    "status": "ACTIVE",
+    "yearsExperience": 5
+  },
+  {
+    "name": "Benjamin Clark",
+    "email": "benjamin.clark@academy",
+    "specialization": "AI",
+    "status": "INACTIVE",
+    "yearsExperience": 12
+  }
+]
